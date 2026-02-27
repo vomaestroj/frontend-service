@@ -1,0 +1,15 @@
+name: BuildOut # Name of the workflow
+on: [push] # Event that triggers the workflow (e.g., a push to any branch)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # The runner environment (e.g., Linux, Windows, macOS)
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 # Action to check out your repository code
+
+      - name: Install dependencies
+        run: npm install # Command to run in the runner environment
+
+      - name: Run tests
+        run: npm test # Command to run your tests
